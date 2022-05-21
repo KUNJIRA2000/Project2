@@ -73,8 +73,16 @@ function validate()
 	}
 
 
-	return result;
+	if(!result)
+	{
+		showError("errmsg", "Please check if you have answered all questions");
+	}
+	else
+	{
+		storeData();
+	}
 
+	return result;
 }
 
 //Error Message
