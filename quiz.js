@@ -130,6 +130,8 @@ function init()
 {
 
 	var QuizForm = document.getElementById("quizForm");
+	clearError();
+	QuizForm.onsubmit = validate;
 	QuizForm.addEventListener("Submit", function(event){
 		clearError();
 		if(validate() == false)
@@ -137,14 +139,7 @@ function init()
 			
 			event.preventDefault();
 		}
-		else
-		{
-			QuizForm.onsubmit = storeData;
-			return true;
-		}
 	}, true);
-
-	QuizForm.onsubmit = validate;
 
 
 }
